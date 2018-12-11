@@ -92,7 +92,7 @@ class SessionScheme extends BaseScheme {
      * defined
      */
     if (rememberToken && duration) {
-      this._ctx.response.cookie(this.rememberTokenKey, rememberToken, Object.assign(this._cookieOptions, {
+      this._ctx.response.cookie(this.rememberTokenKey, rememberToken, Object.assign({}, this._cookieOptions, {
         expires: new Date(Date.now() + duration)
       }))
     }
